@@ -6,18 +6,20 @@ body {
     height: 100vh;
 }
 
-#lewy-panel {
+
+#lewypanel {
     width: 300px;
     background-color: white;
     padding: 20px;
     border-right: 2px solid #ccc;
-    
+  
 }
 
 #prawypanel {
     flex: 1;
-padding: 20px;
+    padding: 20px;
     overflow-y: auto;
+   
 }
 
 textarea {
@@ -33,5 +35,13 @@ input[type="date"] {
 
 #zapisz {
     margin-top: 10px;
+   
 }
 
+.element-listy {
+    margin-bottom: 10px;
+    .element-listy {
+    margin-bottom: 10px;
+
+}
+}

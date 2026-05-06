@@ -7,21 +7,23 @@
 </head>
 <body>
 
-
-    <div id="lewy-panel">
+    <div id="lewypanel">
         <h2>Lista zadań</h2>
-        
-    <a href="https://github.com/sintractora/Kolokwium" target="_blank">Link do repozytorium</a>
+
+        <a href="https://github.com/sintractora/Kolokwium" target="_blank">Link do repozytorium</a>
         <br><br>
+
 
         Opis zadania:<br>
 
 
         <textarea id="opis" maxlength="128"></textarea>
-    <br><br>
+
+        <br><br>
         Data:<br>
     <input type="date" id="data">
         <br><br>
+
         <button id="zapisz">Zapisz</button>
     </div>
     
@@ -31,18 +33,27 @@
 
     <script>
         document.getElementById("zapisz").addEventListener("click", function() {
+            
             let opis = document.getElementById("opis").value;
-
-
-
             let data = document.getElementById("data").value;
 
-
             if (opis !== "" && data !== "") {
-                document.getElementById("wynik").innerHTML = "Zadanie: " + opis + "<br>Data: " + data;
+
+                let Data1 = data.split("-");
+
+            let sformatowanaData = Data1[2] + "." + Data1[1] + "." + Data1[0];
+
+                let zad2 = document.createElement("div");
+                zad2.className = "element-listy";
+
+                zad2.innerText = sformatowanaData + " " + opis;
+
+                document.getElementById("wynik").appendChild(zad2);
+
+                document.getElementById("opis").value = "";
+                document.getElementById("data").value = "";
             }
         });
     </script>
-    
 </body>
 </html>
